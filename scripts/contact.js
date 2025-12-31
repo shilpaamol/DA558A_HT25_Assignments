@@ -56,8 +56,23 @@ const formResetBtn = document.getElementById("idResetButton");
 // Prevent page reload when form is submitted (hint: event.preventDefault())
 form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log("Form submitted via JavaScript");
-})
+
+    // if all validations are successful submit the form and clear it
+    if (validateInputs())
+    {
+        console.log("Form submitted via JavaScript after performing all validations.");
+        form.submit();
+    }
+    else
+    {
+        console.log("Please fix errors before submitting the form.");
+    }
+});
+
+function validateInputs()
+{
+    return false;
+}
 // Validate all required fields
 // If errors exist: Show all error messages
 // If valid: Show success message and clear form
