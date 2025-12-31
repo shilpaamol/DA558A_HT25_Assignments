@@ -12,11 +12,11 @@ html {
   background-color: rgb(222, 222, 222);
 }
 
-#AboutMeImage {
+#idAboutMeImage {
   border-radius: 50%;
 }
 
-.menu {
+.Menu {
   float: right;
   padding: 0 10px 0 10px;
   margin: 0 10px 0 0;
@@ -28,7 +28,7 @@ html {
   column-gap: 20px;
 }
 
-#AboutMeTable,
+#idAboutMeTable,
 th,
 td {
   border: 1px solid blue;
@@ -49,9 +49,9 @@ li {
 
 input[type=text],
 textarea,
-#email,
-#phone,
-#subject {
+#idEmail,
+#idPhone,
+#idSubject {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;

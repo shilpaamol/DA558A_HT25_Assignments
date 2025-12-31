@@ -10,25 +10,25 @@
 </head>
 
 <body>
-    <a class="menu" href="https://www.linkedin.com/in/amollahane/" target="_blank">LinkedIn</a>
-    <a class="menu" href="#ContactMeSection">Contact</a>
-    <a class="menu" href="#GoalsSection">Goals</a>
-    <a class="menu" href="#InterestsSection">Interests</a>
-    <a class="menu" href="#AboutMeSection">About</a>
+    <a id="idMenuItemAboutMe" class="Menu" href="https://www.linkedin.com/in/amollahane/" target="_blank">LinkedIn</a>
+    <a id="idMenuItemInterests" class="Menu" href="#ContactMeSection">Contact</a>
+    <a id="idMenuItemGoals" class="Menu" href="#GoalsSection">Goals</a>
+    <a id="idMenuItemContact" class="Menu" href="#InterestsSection">Interests</a>
+    <a id="idMenuItemLinkedIn" class="Menu" href="#AboutMeSection">About</a>
 
-    <section id="AboutMeSection">
-        <h2 id="AboutMeCaption">About Me</h2>
+    <section id="idAboutMeSection">
+        <h2 id="idAboutMeCaption">About Me</h2>
 
-        <div class="about-me-grid-container">
-            <img id="AboutMeImage" class="about-me-grid-item" src="images/Profile.jpeg" alt="A portrait at my workspace"
-                width="200" height="200">
+        <div id="idAboutMeGridContainer" class="about-me-grid-container">
+            <img id="idAboutMeImage" class="about-me-grid-item" src="images/Profile.jpeg"
+                alt="A portrait of me" width="200" height="200">
 
-            <div id="AboutMeTextAndTable" class="about-me-grid-item">
-                <p id="AboutMeText">I grew up in a small town in India, and one of my fondest childhood memories is all
+            <div id="idAboutMeTextAndTable" class="about-me-grid-item">
+                <p id="idAboutMeText">I grew up in a small town in India, and one of my fondest childhood memories is all
                     the fun I had with my school friends. Our school teachers were great. They and my parents are my
                     inspiration.</p>
 
-                <table id="AboutMeTable">
+                <table id="idAboutMeTable">
                     <tr>
                         <th>Quick Facts</th>
                         <td>CAD/CAE Software Development</td>
@@ -46,65 +46,59 @@
         </div>
     </section>
 
-    <section id="InterestsSection"></section>
-
-    <h2>Academic Interests & Hobbies</h2>
-    <h4>I became interested in CAD/CAE software development during my undergraudate program in Mechanical Engineering.
-    </h4>
-
-    <ul>
-        <li>DIY Electronics: I like leaming how things work</li>
-        <li>Hiking: It's a great way to clear my mind</li>
-        <li>Photography: Capturing the beauty Of nature</li>
-    </ul>
-
-    <img src="images/Hobbies1.png" alt="A portrait at my workspace" width="200" height="200">
-
-    <img src="images/Hobbies2.png" alt="A portrait at my workspace" width="200" height="200">
+    <section id="idInterestsSection">
+        <h2 id="idInterestsCaption">Academic Interests & Hobbies</h2>
+        <h4 id="idInterestsText">I became interested in CAD/CAE software development during my undergraudate program in Mechanical Engineering.</h4>
+        <ul id="idInterestsList">
+            <li>DIY Electronics: I like leaming how things work</li>
+            <li>Hiking: It's a great way to clear my mind</li>
+            <li>Photography: Capturing the beauty Of nature</li>
+        </ul>
+        <img id="idInterestsPicture1" src="images/Hobbies1.png" alt="Hobbies 1 placeholder alt text" width="200" height="200">
+        <img id="idInterestsPicture2" src="images/Hobbies2.png" alt="Hobbies 2 placeholder alt text" width="200" height="200">
     </section>
 
-    <section id="GoalsSection">
-        <h2>Future Goals</h2>
-        <p>One of my main goals is to learn a couple of new Programming Software/Tools/Skills/Languages every year.</p>
+    <section id="idGoalsSection">
+        <h2 id="idGoalsCaption">Future Goals</h2>
+        <p id="idGoalsText">One of my main goals is to learn a couple of new Programming Software/Tools/Skills/Languages every year.</p>
     </section>
 
-    <section id="ContactMeSection">
-        <h2>Contact Me</h2>
-        <form action="#" method="post">
+    <section id="idContactMeSection">
+        <h2 id="idContactMeCaption">Contact Me</h2>
+        <form  id="idContactMeForm" action="#" method="post">
             <div class="name-grid-container">
                 <div class="name-grid-item">
-                    <label for="fName">First Name</label>
-                    <input type="text" id="fName" class="formField" name="name_fName" placeholder="First name..">
+                    <label for="idFirstName">First Name</label>
+                    <input id="idFirstName" type="text" class="formField" name="fName" placeholder="First name..">
                 </div>
 
                 <div class="name-grid-item">
-                    <label for="lName">Last Name</label>
-                    <input type="text" id="lName" class="formField" name="name_lName" placeholder="Last name..">
+                    <label for="idLastName">Last Name</label>
+                    <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">
                 </div>
             </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" class="formField" name="name_email"
+            <label for="idEmail">Email</label>
+            <input id="idEmail" type="email" class="formField" name="email"
                 placeholder="firstname.lastname@provider.com">
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" class="formField" name="name_phone">
+            <label for="idPhone">Phone Number</label>
+            <input id="idPhone" type="tel" class="formField" name="phone">
 
-            <label for="subject">Subject</label>
-            <select id="subject" class="formField" name="name_subject">
+            <label for="idSubject">Subject</label>
+            <select id="idSubject" class="formField" name="subject">
                 <option value="General">General Inquiries</option>
                 <option value="Sales">Sales & Partnerships</option>
-                <option value="Support">Support & Issues</option>                
+                <option value="Support">Support & Issues</option>
             </select>
 
-            <label for="message">Message:</label>
-            <textarea id="message" class="formField" name="name_message" rows="4" cols="10" wrap="soft"
+            <label for="idMessage">Message:</label>
+            <textarea id="idMessage" class="formField" name="message" rows="4" cols="10" wrap="soft"
                 placeholder="Write something.."></textarea>
 
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+            <input id="idSubmitButton" type="submit" value="Submit">
+            <input  id="idResetButton" type="reset" value="Reset">
         </form>
     </section>
 </body>
-
 </html>

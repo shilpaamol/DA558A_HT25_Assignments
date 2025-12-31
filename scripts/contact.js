@@ -24,3 +24,16 @@ Success Message:
     Message should disappear automatically after 3 seconds
     Use setTimeout() for automatic disappearance
 */
+
+// DOM Selection:
+// Get references to all form elements
+// Store them in variables for easy access
+const contactMeForm = document.getElementById("idContactMeForm");
+const formFirstName = document.getElementById("idFirstName");
+const formLastName = document.getElementById("idLastName");
+const formEmail = document.getElementById("idEmail");
+const formPhone = document.getElementById("idPhone");
+const formSubject = document.getElementById("idSubject");
+const formMessage = document.getElementById("idMessage");
+const formSubmitBtn = document.getElementById("idSubmitButton");
+const formResetBtn = document.getElementById("idResetButton");
