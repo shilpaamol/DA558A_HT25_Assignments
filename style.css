@@ -75,6 +75,6 @@ input[type=reset] {
   color: rgb(0, 5, 38);
 }
 
-#idFirstNameMsg {
+#idFirstNameMsg, #idLastNameMsg {
   color: red;
 }

@@ -32,6 +32,7 @@ const form = document.getElementById("idContactMeForm");
 const formFirstName = document.getElementById("idFirstName");
 const formFirstNameMsg = document.getElementById("idFirstNameMsg");
 const formLastName = document.getElementById("idLastName");
+const formLastNameMsg = document.getElementById("idLastNameMsg");
 const formEmail = document.getElementById("idEmail");
 const formPhone = document.getElementById("idPhone");
 const formSubject = document.getElementById("idSubject");
@@ -75,22 +76,48 @@ form.addEventListener("submit", function(event){
     }
 });
 
-function validateFirstName()
+// Check if name contains only letters (no numbers or special characters)
+function validateName()
 {
-    var regExp = /[a-zA-Z]/;
-    if (!regExp.test(formFirstName.value))
-    {
-        formFirstNameMsg.textContent = "Please enter a valid value.";
-        return false;
-    }
-
+    let retVal = true;
     formFirstNameMsg.textContent = "";
-    return true;
+    formLastNameMsg.textContent = "";
+
+    const errorMsgNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
+    const errorMsgEmptyStr = "This field cannot be empty.";
+    
+    const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
+
+    // validate first name
+    if(formFirstName.value.length === 0)
+    {
+        formFirstNameMsg.textContent = errorMsgEmptyStr;
+        retVal &= false;
+    }
+    else if (!regExp.test(formFirstName.value))
+    {
+        formFirstNameMsg.textContent = errorMsgNonAlpha;
+        retVal &= false;
+    }
+    
+    // validate last name
+    if(formLastName.value.length === 0)
+    {
+        formLastNameMsg.textContent = errorMsgEmptyStr;
+        retVal &= false;  
+    }
+    else if (!regExp.test(formLastName.value))
+    {
+        formLastNameMsg.textContent = errorMsgNonAlpha;
+        retVal &= false;
+    }    
+    
+    return retVal;
 }
 
 function validateInputs()
 {
-    if(!validateFirstName())
+    if(!validateName())
     {
         return false;
     }
