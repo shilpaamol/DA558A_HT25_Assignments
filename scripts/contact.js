@@ -34,6 +34,7 @@ const formFirstNameMsg = document.getElementById("idFirstNameMsg");
 const formLastName = document.getElementById("idLastName");
 const formLastNameMsg = document.getElementById("idLastNameMsg");
 const formEmail = document.getElementById("idEmail");
+const formEmailMsg = document.getElementById("idEmailMsg");
 const formPhone = document.getElementById("idPhone");
 const formSubject = document.getElementById("idSubject");
 const formMessage = document.getElementById("idMessage");
@@ -51,7 +52,7 @@ const formResetBtn = document.getElementById("idResetButton");
 
 // Real-time Character Counter:
 // Update message/counter as "x/20 characters" as user types
-formMessage.addEventListener("keyup", function(){
+formMessage.addEventListener("keyup", function () {
     const msgCharCount = formMessage.value.length;
     formMsgCharCount.textContent = (`${msgCharCount}/20 characters`);
 
@@ -61,67 +62,85 @@ formMessage.addEventListener("keyup", function(){
 
 // Form Submission:
 // Prevent page reload when form is submitted (hint: event.preventDefault())
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // if all validations are successful submit the form and clear it
-    if (validateInputs())
-    {
+    if (validateInputs()) {
         alert("The form submitted sucessfully.");
-        form.submit();        
+        form.submit();
     }
-    else
-    {
+    else {
         console.log("Please fix errors before submitting the form.");
     }
 });
 
 // Check if name contains only letters (no numbers or special characters)
-function validateName()
-{
+function validateName() {
     let retVal = true;
     formFirstNameMsg.textContent = "";
     formLastNameMsg.textContent = "";
 
     const errorMsgNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
     const errorMsgEmptyStr = "This field cannot be empty.";
-    
+
     const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
 
     // validate first name
-    if(formFirstName.value.length === 0)
-    {
+    if (formFirstName.value.length === 0) {
         formFirstNameMsg.textContent = errorMsgEmptyStr;
         retVal &= false;
     }
-    else if (!regExp.test(formFirstName.value))
-    {
+    else if (!regExp.test(formFirstName.value)) {
         formFirstNameMsg.textContent = errorMsgNonAlpha;
         retVal &= false;
     }
-    
+
     // validate last name
-    if(formLastName.value.length === 0)
-    {
+    if (formLastName.value.length === 0) {
         formLastNameMsg.textContent = errorMsgEmptyStr;
-        retVal &= false;  
+        retVal &= false;
     }
-    else if (!regExp.test(formLastName.value))
-    {
+    else if (!regExp.test(formLastName.value)) {
         formLastNameMsg.textContent = errorMsgNonAlpha;
         retVal &= false;
-    }    
-    
+    }
+
     return retVal;
 }
 
-function validateInputs()
-{
-    if(!validateName())
-    {
-        return false;
+function validateEmail() {
+    let retVal = true;
+    formEmailMsg.textContent = "";
+
+    const errorMsgNonAlpha = "Please use only letters: \"a\" to \"z\" or \"A\" to \"Z\".";
+    const errorMsgEmptyStr = "This field cannot be empty.";
+
+    const regExp = /[a-zA-Z]/; // We are allowing ASCII alpha characters only
+
+    if (formEmail.value.length === 0) {
+        formEmailMsg.textContent = errorMsgEmptyStr;
+        retVal &= false;
     }
-    return true;
+    /*else if (!regExp.test(formEmail.value)) {
+        formEmailMsg.textContent = errorMsgNonAlpha;
+        retVal &= false;
+    }
+    return retVal;*/
+    return retVal;
+}
+
+function validateInputs() {
+    let retVal = true;
+    if (!validateName()) {
+        retVal &= false;
+    }
+
+    if (!validateEmail()) {
+        retVal &= false;
+    }
+
+    return retVal;
 }
 // Validate all required fields
 // If errors exist: Show all error messages
@@ -131,6 +150,3 @@ function validateInputs()
 // Show personalized message: "Thank you [First Name]! I will contact you soon!"
 // Message should disappear automatically after 3 seconds
 // Use setTimeout() for automatic disappearance
-
-
-

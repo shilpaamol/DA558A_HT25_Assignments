@@ -75,6 +75,7 @@ input[type=reset] {
   color: rgb(0, 5, 38);
 }
 
-#idFirstNameMsg, #idLastNameMsg {
+.ErrorMessage{
   color: red;
+  font-weight: bold;
 }

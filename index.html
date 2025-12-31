@@ -69,20 +69,21 @@
             <div class="name-grid-container">
                 <div class="name-grid-item">
                     <label for="idFirstName">First Name</label>
+                    <label id="idFirstNameMsg" class="ErrorMessage"></label>
                     <input id="idFirstName" type="text" class="formField" name="fName">
-                    <label id="idFirstNameMsg">test</label>
+                    
                 </div>
 
                 <div class="name-grid-item">
                     <label for="idLastName">Last Name</label>
-                    <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">
-                    <label id="idLastNameMsg">test</label>
+                    <label id="idLastNameMsg" class="ErrorMessage"></label>
+                    <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">                    
                 </div>
             </div>
 
             <label for="idEmail">Email</label>
-            <input id="idEmail" type="email" class="formField" name="email"
-                placeholder="firstname.lastname@provider.com">
+            <label id="idEmailMsg" class="ErrorMessage"></label>
+            <input id="idEmail" type="email" class="formField" name="email">            
 
             <label for="idPhone">Phone Number</label>
             <input id="idPhone" type="tel" class="formField" name="phone">
