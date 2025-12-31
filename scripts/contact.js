@@ -35,6 +35,7 @@ const formEmail = document.getElementById("idEmail");
 const formPhone = document.getElementById("idPhone");
 const formSubject = document.getElementById("idSubject");
 const formMessage = document.getElementById("idMessage");
+const formMsgCharCount = document.getElementById("idMessageCharCount");
 const formSubmitBtn = document.getElementById("idSubmitButton");
 const formResetBtn = document.getElementById("idResetButton");
 
@@ -51,6 +52,11 @@ const formResetBtn = document.getElementById("idResetButton");
 // Update counter as user types
 // Change color to red if below 20 characters
 // Change color to green if 20 or more characters
+formMessage.addEventListener("keyup", function(){
+    const text = formMessage.value;
+    const count = text.length;
+    formMsgCharCount.textContent = (`${count}/20 characters`);
+});
 
 // Form Submission:
 // Prevent page reload when form is submitted (hint: event.preventDefault())
@@ -71,7 +77,7 @@ form.addEventListener("submit", function(event){
 
 function validateInputs()
 {
-    return false;
+    return true;
 }
 // Validate all required fields
 // If errors exist: Show all error messages
