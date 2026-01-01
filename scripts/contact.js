@@ -25,9 +25,7 @@ Success Message:
     Use setTimeout() for automatic disappearance
 */
 
-// DOM Selection:
-// Get references to all form elements
-// Store them in variables for easy access
+// Get references to all form elements and Store them in variables for easy access
 const form = document.getElementById("idContactMeForm");
 const formFirstName = document.getElementById("idFirstName");
 const formFirstNameErr = document.getElementById("idFirstNameErr");
@@ -58,6 +56,10 @@ formMessage.addEventListener("keyup", function () {
     formMessage.style.color = (msgCharCount < 20) ? "red" : "green";
 });
 
+function clearForm() {
+
+}
+
 // Form Submission:
 // Prevent page reload when form is submitted (hint: event.preventDefault())
 form.addEventListener("submit", function (event) {
@@ -65,8 +67,15 @@ form.addEventListener("submit", function (event) {
 
     // if all validations are successful submit the form and clear it
     if (validateInputs()) {
-        alert("The form submitted sucessfully.");
         form.submit();
+        alert("The form submitted sucessfully.");
+
+        form.reset();
+
+        elem = document.createElement("div");
+        elem.id = 'myID';
+        elem.innerHTML = `Thank you ${formFirstName.value}! I will contact you soon!`
+        form.appendChild(elem);
     }
     else {
         console.log("Please fix errors before submitting the form.");
@@ -117,9 +126,8 @@ function validateEmail() {
     }
 
     const atSymbol = email.indexOf('@');
-    const dot = email.lastIndexOf('.');    
-    if (atSymbol > 0 && dot > atSymbol)
-    {
+    const dot = email.lastIndexOf('.');
+    if (atSymbol > 0 && dot > atSymbol) {
         return true;
     }
     formEmailErr.textContent = "Enter valid email.";
@@ -151,11 +159,7 @@ function validateInputs() {
 
     return retVal;
 }
-// Validate all required fields
-// If errors exist: Show all error messages
-// If valid: Show success message and clear form
 
-// Success Message:
-// Show personalized message: "Thank you [First Name]! I will contact you soon!"
+
 // Message should disappear automatically after 3 seconds
 // Use setTimeout() for automatic disappearance
