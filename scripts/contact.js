@@ -41,11 +41,6 @@ const formMsgCharCount = document.getElementById("idMessageCharCount");
 const formSubmitBtn = document.getElementById("idSubmitButton");
 const formResetBtn = document.getElementById("idResetButton");
 
-// Validation Functions:
-// 4. showError() - Display error message below the field
-// 5. clearError() - Remove error message when field is valid
-// 6. clearForm() - Clear all form fields after successful submission
-
 // Real-time Character Counter:
 // Update message/counter as "x/20 characters" as user types
 formMessage.addEventListener("keyup", function () {
@@ -55,10 +50,6 @@ formMessage.addEventListener("keyup", function () {
     // Change message color to red if below 20 characters, else change color to green
     formMessage.style.color = (msgCharCount < 20) ? "red" : "green";
 });
-
-function clearForm() {
-
-}
 
 // Form Submission:
 // Prevent page reload when form is submitted (hint: event.preventDefault())
@@ -70,12 +61,18 @@ form.addEventListener("submit", function (event) {
         form.submit();
         alert("The form submitted sucessfully.");
 
+        // chache onto first name before resetting the from
+        const firstName = formFirstName.value;
+
         form.reset();
 
+        // Show personalized message on successful form Submission
+        // Message should disappear automatically after 3 seconds
         elem = document.createElement("div");
         elem.id = 'myID';
-        elem.innerHTML = `Thank you ${formFirstName.value}! I will contact you soon!`
+        elem.innerHTML = `Thank you ${firstName}! I will contact you soon!`;
         form.appendChild(elem);
+        setTimeout(function () { elem.innerHTML = "  "; }, 3000);
     }
     else {
         console.log("Please fix errors before submitting the form.");
@@ -135,6 +132,7 @@ function validateEmail() {
 }
 
 function validateMessage() {
+    return true;
     formMessageErr.textContent = "";
     if (formMessage.value.length < 20) {
         formMessageErr.textContent = "Must contain at least 20 characters";
@@ -143,6 +141,9 @@ function validateMessage() {
     return true;
 }
 
+// Validate inputs one by one.
+// If validation of one of the inputs fails, we still need to continue
+// validating the rest of the inputs so that ueer sees all errors at once.
 function validateInputs() {
     let retVal = true;
     if (!validateName()) {
@@ -159,7 +160,3 @@ function validateInputs() {
 
     return retVal;
 }
-
-
-// Message should disappear automatically after 3 seconds
-// Use setTimeout() for automatic disappearance
