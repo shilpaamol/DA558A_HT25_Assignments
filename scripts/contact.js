@@ -42,7 +42,7 @@ const formSubmitBtn = document.getElementById("idSubmitButton");
 const formResetBtn = document.getElementById("idResetButton");
 
 // Real-time Character Counter:
-// Update message/counter as "x/20 characters" as user types
+// Update message/counter as "x/20 characters" as user types.
 formMessage.addEventListener("keyup", function () {
     const msgCharCount = formMessage.value.length;
     formMsgCharCount.textContent = (`${msgCharCount}/20 characters`);
@@ -51,32 +51,32 @@ formMessage.addEventListener("keyup", function () {
     formMessage.style.color = (msgCharCount < 20) ? "red" : "green";
 });
 
-// Form Submission:
-// Prevent page reload when form is submitted (hint: event.preventDefault())
+// Form Submission.
+// Prevent page reload when form is submitted
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // if all validations are successful submit the form and clear it
-    if (validateInputs()) {
-        form.submit();
-        alert("The form submitted sucessfully.");
-
-        // chache onto first name before resetting the from
-        const firstName = formFirstName.value;
-
-        form.reset();
-
-        // Show personalized message on successful form Submission
-        // Message should disappear automatically after 3 seconds
-        elem = document.createElement("div");
-        elem.id = 'myID';
-        elem.innerHTML = `Thank you ${firstName}! I will contact you soon!`;
-        form.appendChild(elem);
-        setTimeout(function () { elem.innerHTML = "  "; }, 3000);
-    }
-    else {
+    if (!validateInputs()) {
         console.log("Please fix errors before submitting the form.");
+        return;
     }
+
+    // if all validations are successful submit the form and clear (reset) it
+    form.submit();
+    alert("The form submitted sucessfully.");
+
+    // chache the "first name" before resetting the from.
+    const firstName = formFirstName.value;
+
+    form.reset();
+
+    // Show personalized message on successful form Submission
+    // Message should disappear automatically after 3 seconds
+    elem = document.createElement("div");
+    elem.id = 'myID';
+    elem.innerHTML = `Thank you ${firstName}! I will contact you soon!`;
+    form.appendChild(elem);
+    setTimeout(function () { elem.innerHTML = ""; }, 3000);
 });
 
 // Check if name contains only letters (no numbers or special characters)
@@ -132,7 +132,6 @@ function validateEmail() {
 }
 
 function validateMessage() {
-    return true;
     formMessageErr.textContent = "";
     if (formMessage.value.length < 20) {
         formMessageErr.textContent = "Must contain at least 20 characters";
