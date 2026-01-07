@@ -73,6 +73,10 @@ textarea,
   margin-bottom: 16px;
 }
 
+#idMessageCharCount {
+  color: red;
+}
+
 input[type=submit],
 [type=reset] {
   background-color: #04AA6D;
