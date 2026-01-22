@@ -54,15 +54,9 @@
             <li>DIY Electronics: I like learning how things work</li>
             <li>Yoga: I am a certified Yoga practioner</li>
         </ul>
-        <div class="row">
-            <div class="column">
-                <img id="idInterestsPicture1" src="images/Hobbies1.png" alt="Snow capped mountains of the Himalayas" width=100%>
-                <figcaption>Snow capped mountains of the Himalayas.</figcaption>
-            </div>
-            <div class="column">
-                <img id="idInterestsPicture2" src="images/Hobbies2.png" alt="A yoga session I recently participated in" width=100%>
-                <figcaption>A yoga session I recently participated in.</figcaption>
-            </div>
+        <div id="pictureContainer" class="picture">
+            <img id="idInterestsPicture1" class="picture" src="images/Hobbies1.png" alt="Snow capped mountains of the Himalayas" width="49%">
+            <img id="idInterestsPicture2" class="picture" src="images/Hobbies2.png" alt="A yoga session I recently participated in" width="49%">
         </div>
     </section>
 
@@ -84,13 +78,13 @@
                 <div class="name-grid-item">
                     <label for="idLastName">Last Name</label>
                     <label id="idLastNameErr" class="ErrorMessage"></label>
-                    <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">                    
+                    <input id="idLastName" type="text" class="formField" name="lName" placeholder="Last name..">
                 </div>
             </div>
 
             <label for="idEmail">Email</label>
             <label id="idEmailErr" class="ErrorMessage"></label>
-            <input id="idEmail" type="email" class="formField" name="email">            
+            <input id="idEmail" type="email" class="formField" name="email">
 
             <label for="idPhone">Phone Number</label>
             <input id="idPhone" type="tel" class="formField" name="phone" pattern="[0-9]{10}">
@@ -105,7 +99,7 @@
             <label for="idMessage">Message:</label>
             <label id="idMessageErr" class="ErrorMessage"></label>
             <textarea id="idMessage" class="formField" name="message" rows="4" cols="10" wrap="soft"></textarea>
-            <p id="idMessageCharCount" class="formField">"0 characters"</p>
+            <p id="idMessageCharCount" class="formField">0 characters</p>
 
             <input id="idSubmitButton" type="submit" value="Submit">
             <input id="idResetButton" type="reset" value="Reset">
