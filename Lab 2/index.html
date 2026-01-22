@@ -11,10 +11,10 @@
 
 <body>
     <a id="idMenuItemAboutMe" class="Menu" href="https://www.linkedin.com/in/amollahane/" target="_blank">LinkedIn</a>
-    <a id="idMenuItemInterests" class="Menu" href="#idContactMeSection">Contact</a>
-    <a id="idMenuItemGoals" class="Menu" href="#idGoalsSection">Goals</a>
-    <a id="idMenuItemContact" class="Menu" href="#idInterestsSection">Interests</a>
-    <a id="idMenuItemLinkedIn" class="Menu" href="#idAboutMeSection">About</a>
+    <a id="idMenuItemInterests" class="Menu" href="#ContactMeSection">Contact</a>
+    <a id="idMenuItemGoals" class="Menu" href="#GoalsSection">Goals</a>
+    <a id="idMenuItemContact" class="Menu" href="#InterestsSection">Interests</a>
+    <a id="idMenuItemLinkedIn" class="Menu" href="#AboutMeSection">About</a>
 
     <section id="idAboutMeSection">
         <h2 id="idAboutMeCaption">About Me</h2>
@@ -54,16 +54,8 @@
             <li>DIY Electronics: I like learning how things work</li>
             <li>Yoga: I am a certified Yoga practioner</li>
         </ul>
-        <div class="row">
-            <div class="column">
-                <img id="idInterestsPicture1" src="images/Hobbies1.png" alt="Snow capped mountains of the Himalayas" width=100%>
-                <figcaption>Snow capped mountains of the Himalayas.</figcaption>
-            </div>
-            <div class="column">
-                <img id="idInterestsPicture2" src="images/Hobbies2.png" alt="A yoga session I recently participated in" width=100%>
-                <figcaption>A yoga session I recently participated in.</figcaption>
-            </div>
-        </div>
+        <img id="idInterestsPicture1" src="images/Hobbies1.png" alt="Snow capped mountains of the Himalayas" width="320" height="180">
+        <img id="idInterestsPicture2" src="images/Hobbies2.png" alt="A yoga session I recently participated in" width="320" height="180">
     </section>
 
     <section id="idGoalsSection">
@@ -93,7 +85,7 @@
             <input id="idEmail" type="email" class="formField" name="email">            
 
             <label for="idPhone">Phone Number</label>
-            <input id="idPhone" type="tel" class="formField" name="phone" pattern="[0-9]{10}">
+            <input id="idPhone" type="tel" class="formField" name="phone">
 
             <label for="idSubject">Subject</label>
             <select id="idSubject" class="formField" name="subject">
@@ -105,7 +97,7 @@
             <label for="idMessage">Message:</label>
             <label id="idMessageErr" class="ErrorMessage"></label>
             <textarea id="idMessage" class="formField" name="message" rows="4" cols="10" wrap="soft"></textarea>
-            <p id="idMessageCharCount" class="formField">"0 characters"</p>
+            <p id="idMessageCharCount" class="formField">"0/20 characters"</p>
 
             <input id="idSubmitButton" type="submit" value="Submit">
             <input id="idResetButton" type="reset" value="Reset">
